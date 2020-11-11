@@ -1,0 +1,62 @@
+/*-- Use For Custom Styling --*/
+
+header #bono{
+    text-align: center;
+    top: 90px;
+    position: absolute;
+    z-index: 200;
+    background-color: #E51B1E;
+}
+
+
+header #bono .assetBlock {
+    text-align: center;
+    margin: auto;
+    padding: 14px 0px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #222;
+    letter-spacing: 1px
+}
+
+header #bono p {
+    margin: 0px;
+    color: #FFF; 
+}
+
+header #bono .assetBlock a {
+    font-weight: bold;
+}
+
+header #bono .assetBlock span.amarillo {
+    color: #FCA700
+}
+
+.text-azul{
+    color:  #273C4E;
+}
+.text-azul:hover{
+    color:  #fff;
+}
+
+
+@media screen and (max-width: 767px) {
+    .movil {
+        display: none;
+    }
+
+    header #bono .assetBlock p {
+        font-size: 0.8em;
+    }
+
+}
+
+#slideshow {
+    height: 28px;
+    overflow: hidden;
+}
+
+.__title{
+    margin-bottom: 20px;
+}

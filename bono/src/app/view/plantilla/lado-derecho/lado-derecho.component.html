@@ -1,0 +1,45 @@
+<!-- Blog Widgets -->
+    <div class="text-left">
+        <!-- Recent Post -->
+        <div class="widget heading-space wow fadeIn" data-wow-delay="350ms">
+            <h5 class="color-black font-weight-600 text-capitalize mb-4">Noticias Recientes</h5>
+            <div class="single-post mb-3">
+                <a [routerLink]="['noticias/cusquenios-prefieren-cajeros-agentes']" class="post"><img src="assets/images/noticias/cusqueños-cajero-agente-011020202.jpeg" alt="image"></a>
+                <div class="text">
+                    <a [routerLink]="['noticias/cusquenios-prefieren-cajeros-agentes']" class="color-grey">CUSQUEÑOS PREFIEREN USAR CAJEROS Y AGENTES MULTIRED</a>
+                    <span>Setiembre 28,2020</span>
+                </div>
+            </div>
+            <div class="single-post mb-3">
+                <a [routerLink]="['noticias/conoce-cajeros-buque']" class="post"><img src="assets/images/noticias/noticia-cajero-buque-0610202003.jpg" alt="image"></a>
+                <div class="text">
+                    <a [routerLink]="['noticias/conoce-cajeros-buque']" class="color-grey">CONOCE LOS CAJEROS AUTOMÁTICOS MULTIRED QUE VIAJAN EN BUQUE</a>
+                    <span>Octubre 06,2020</span>
+                </div>
+            </div>
+        </div>
+     
+        <!-- Tags -->
+        <div class="widget heading-space mb-0 wow fadeIn" data-wow-delay="450ms">
+          <h5 class="color-black font-weight-600 mb-4 text-capitalize">TWEETS RECIENTES</h5>
+            <div>
+               <ngx-tweet tweetId="268336615"></ngx-tweet>
+               <!-- You can now use the library component in app.component.html -->
+                <ngx-twitter-timeline 
+                [data]="{sourceType: 'url', url: 'https://twitter.com/BancodelaNacion'}"
+                [opts]="{tweetLimit: 2}"
+                ></ngx-twitter-timeline>
+
+                <!-- <div>
+                    <div [socialShare]="'fb'">Facebook</div>
+                    <div [socialShare]="'tw'">Twitter</div>
+                    <div [socialShare]="'in'">Linkdedin</div>
+                    <div [socialShare]="'tr'">Tumblr</div>
+                    <div [socialShare]="'rd'">Reddit</div>
+                    <div [socialShare]="'pn'">Pinterest</div>
+                    <div [socialShare]="'dg'">Share via Digg</div>
+                  </div> -->
+
+            </div>
+        </div>
+    </div>

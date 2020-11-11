@@ -1,0 +1,176 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "bono": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/bono",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/assets/assets/fonts/banco/styles.css",
+              "src/assets/assets/css/mainBN.css",
+              "src/assets/css/tipografias.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/themify-icons.css",
+              "src/assets/css/plugins/fontawesome-free/css/all.css",
+              "src/assets/css/animate.min.css",
+              "src/assets/css/cubeportfolio.min.css",
+              "src/assets/css/jquery.fancybox.min.css",
+              "src/assets/css/navigation.css",
+              "src/assets/css/settings.css",
+              "src/assets/css/swiper.min.css",
+              "src/assets/vendors/owlcarousel/assets/owl.carousel.css",
+              "src/assets/css/owl.theme.default.min.css",
+              "src/assets/css/before-after-img.css",
+              "src/assets/css/megamenu.css",
+              "src/assets/css/styleBN.css",
+              "src/assets/css/dark.css",
+              "src/assets/css/green.css",
+              "src/assets/css/custom.css"
+            ],
+            "scripts": [
+              "src/assets/vendors/jquery/dist/jquery.min.js",
+              "src/assets/js/loader.js",
+              "src/assets/vendors/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/morphext.min.js",
+              "src/assets/js/jquery.flip.min.js",
+              "src/assets/js/jquery.appear.js",
+              "src/assets/js/jquery.cubeportfolio.min.js",
+              "src/assets/js/jquery.matchHeight-min.js",
+              "src/assets/js/parallaxie.min.js",
+              "src/assets/js/jquery.fancybox.min.js",
+              "src/assets/js/swiper.min.js",
+              "src/assets/vendors/owlcarousel/owl.carousel.js",
+              "src/assets/js/TweenMax.min.js",
+              "src/assets/js/headroom.js",
+              "src/assets/vendors/wow/dist/wow.min.js",
+              "src/assets/vendors/parallax.js/parallax.js",
+              "src/assets/vendors/jquery-ui/jquery-ui.min.js",
+              "src/assets/vendors/jquery-countTo/jquery.countTo.js",
+              "src/assets/vendors/slick-carousel/slick/slick.js",
+              "src/assets/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js",
+              "src/assets/vendors/isotope/dist/isotope.pkgd.min.js",
+              "src/assets/vendors/imagesloaded/imagesloaded.pkgd.min.js",
+              "src/assets/vendors/magnific-popup/dist/jquery.magnific-popup.min.js",
+              "src/assets/vendors/jquery-modal/jquery.modal.min.js",
+              "src/assets/assets/js/main.js",
+              "src/assets/js/functions.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "bono:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "bono:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "bono:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "bono:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "bono:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "bono",
+  "cli": {
+    "analytics": "46644453-181b-49b2-b33b-964778dcab97"
+  }
+}
